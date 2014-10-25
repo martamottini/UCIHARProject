@@ -1,7 +1,7 @@
 ### Introduction
 
 This repository contains the files for the Getting and Cleaning Data Course Project: a README file (the one you are reading), a R script file (run_analysis.R) and a code book file (CodeBook.md).
-The scope of the project is to collect and clean a data set, more specifically to work on the Human Activity Recognition Using Smartphones Dataset (Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012).
+The scope of the project is to collect and clean a data set, more specifically, to work on the Human Activity Recognition Using Smartphones Dataset (Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012).
 
 ### R script file
 
@@ -20,11 +20,11 @@ For semplicity I'll break down the description of what the code does into steps:
 
 6. It assigns descriptive activity names to the activities in the data frame (identified so far with an ID).
 
-7. It renames the columns with descriptive names for the listed variables. 
+7. It renames the columns with descriptive names for the listed variables. This completes the first data set required to fulfill the project's instructions. It is the data frame "data2". 
 
-8. It calculates the average of each variable of interest (first 66 colums) from the data set, grouping them by activity and subject (6 activites for the 30 subjects). It's a very simple approach that uses "aggregate", an alternative approach (using "split" and "sapply") is also added but as comment. In the former case the code generates a data frame of 180 observations of 66 variables but the Activity and the Subject_Id are also included as columns (180x68 total), while in the latter approach, Activity and Subject_ID are combined together as row labels. Depending on one's need for the structure of the tidy data set, one can choose the first or the second approach.
+8. It calculates the average of each variable of interest (first 66 colums) from the data set, grouping them by activity and subject (6 activites for the 30 subjects). It's a very simple approach that uses "aggregate", an alternative approach (using "split" and "sapply") is also added but commentented. In the former case the code generates a data frame of 180 observations of 66 variables but the Activity and the Subject_Id are also included as columns (180x68 total), while in the latter approach, Activity and Subject_ID are combined together as row labels. Depending on one's need for the structure of the tidy data set, one can choose the first or the second approach.
 
-The final tidy data set has been written into a txt file with the following command:
+The final tidy data set (the data frame "tidydata") can be written into a txt file with the following command:
 
 write.table(tidydata,file="tidydataset.txt",row.names=FALSE)
 
